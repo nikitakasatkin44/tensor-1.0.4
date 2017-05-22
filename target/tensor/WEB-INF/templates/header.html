@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Chat</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../resources/css/style.css" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../resources/css/bootstrap.css" th:href="@{/css/bootstrap.css}" />
+    <script type="text/javascript" src="../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" src="../../resources/js/chat.js" th:src="@{/resources/js/chat.js}"></script>
+    <script type="text/javascript" src="../../resources/js/jquery-1.7.2.min.js" th:src="@{/resources/js/jquery-1.7.2.min.js}"></script>
+    <script type="text/javascript" src="../../resources/js/knockout-2.0.0.js" th:src="@{/resources/js/knockout-2.0.0.js}"></script>
+    <script type="text/javascript" src="../../resources/js/script.js" th:src="@{/resources/js/script.js}"></script>
+</head>
+<body>
+<div th:fragment="copy">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="${urlHome}">Домашняя страница</a></li>
+                <li><a href="${about}">Обо мне</a></li>
+                <li><a href="#">Галерея</a></li>
+                <li><a href="${contacts}">Контакты</a></li>
+                <sec:authorize access="hasRole('ADMIN')"><li><a href="${list}">Пользователи</a></li></sec:authorize>
+                <sec:authorize access="isFullyAuthenticated()"><li><a href="${games}">Игры</a></li></sec:authorize>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <sec:authorize access="isFullyAuthenticated()">
+                    <li><a href="${urlLogout}">Логаут</a></li>
+                </sec:authorize>
+                <sec:authorize access="isAnonymous()">
+                    <li><a href=${urlLogin}>Логин</a></li>
+                    <li><a href=${urlOutsideRegister}>Регистрация</a></li>
+                </sec:authorize>
+            </ul>
+        </div>
+    </div>
+</nav>
+</div>
+</body>
+
+</html>
+
+
+
+

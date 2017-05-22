@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Chat</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../resources/css/style.css" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../resources/css/bootstrap.css" th:href="@{/css/bootstrap.css}" />
+    <script type="text/javascript" src="../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" src="../../resources/js/chat.js" th:src="@{/resources/js/chat.js}"></script>
+    <script type="text/javascript" src="../../resources/js/jquery-1.7.2.min.js" th:src="@{/resources/js/jquery-1.7.2.min.js}"></script>
+    <script type="text/javascript" src="../../resources/js/knockout-2.0.0.js" th:src="@{/resources/js/knockout-2.0.0.js}"></script>
+    <script type="text/javascript" src="../../resources/js/script.js" th:src="@{/resources/js/script.js}"></script>
+</head>
+
+<body>
+<div th:insert="~{header::copy}">Header</div>
+<div class="container">
+
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Сайт вашей мечты!</h1>
+        <p>Здесь вы можете воплотить свои самые смелые фантазии.</p>
+            <p>Добро пожаловать на сайт, <strong>${loggedinuser}</strong>!</p>
+    </div>
+</div>
+
+<div class="container-fluid bg-1 text-center">
+    <div class="row">
+        <div class="col-sm-6">
+            <p>Маяк</p>
+            <img src="/resources/images/Lighthouse.jpg" alt="3rd image" title="3rd image" th:src="@{/resources/images/Lighthouse.jpg}"
+                 class="img-responsive" style="width:100%"/>
+        </div>
+        <div class="col-sm-6">
+            <p>Гортензия</p>
+            <img src="/resources/images/Hydrangeas.jpg" alt="4th image" title="4th image" th:src="@{/resources/images/Hydrangeas.jpg}"
+                 class="img-responsive" style="width:100%"/>
+        </div>
+    </div>
+</div><br/>
+</div>
+</body>
+</html>
